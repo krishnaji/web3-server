@@ -121,7 +121,7 @@ fi
 # :: 3 Compile TypeScript
 echo "Transpiling TypeScript in $DEPLOYMENT_TARGET"
 cd $DEPLOYMENT_TARGET
-eval $NPM_CMD $DEPLOYMENT_TARGET/node_modules/typescript/bin/tsc -p $DEPLOYMENT_TARGET
+eval $DEPLOYMENT_TARGET/node_modules/typescript/bin/tsc -p $DEPLOYMENT_TARGET
 exitWithMessageOnError "npm failed"
 cd - > /dev/null
 
