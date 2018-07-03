@@ -118,14 +118,9 @@ if [ -e "$DEPLOYMENT_TARGET/package.json" ]; then
   cd - > /dev/null
 fi
 
-# 3. Build 
-if [ -e "$DEPLOYMENT_TARGET/package.json" ]; then
-  cd "$DEPLOYMENT_TARGET"
-  echo "Running $NPM_CMD run  build"
-  eval $NPM_CMD run  build
-  exitWithMessageOnError "npm failed"
-  cd - > /dev/null
-fi
+# :: 3 Compile TypeScript
+echo Transpiling TypeScript in %DEPLOYMENT_TARGET%...call :ExecuteCmd node %DEPLOYMENT_TARGET%\node_modules\typescript\bin\tsc -p "%DEPLOYMENT_TARGET%"
+
 
 
 ##################################################################################################################################
